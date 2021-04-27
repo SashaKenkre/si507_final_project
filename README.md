@@ -33,7 +33,7 @@ Download the files provided in this repo and make sure all files and folders are
 
 **Step 3: Go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)**
 
-Go to the link provided ([http://127.0.0.1:5000/](http://127.0.0.1:5000/)) in your terminal after running final_project.py. This will give you access the webpage to interact with the program and its visualization capabilities.
+Go to the link provided ([http://127.0.0.1:5000/](http://127.0.0.1:5000/)) in your terminal after running final_project.py. This will give you access to the webpage to interact with the program and its visualization capabilities.
 
 There are four different options to visualize data from the data source. You can input your choices to get different visualizations for each option. The data visualizations include:
 1. Top X number of movies in the list based on genre
