@@ -2,7 +2,7 @@
 
 This is a final project for SI 507 at UMSI for Winter 2021.
     
-This project looks at (IMDb's Top 250 English-language movies) [https://www.imdb.com/chart/top-english-movies] as rated by IMDb Users. You will be able to learn more about the movies in the list and the directors of those movies. This project provides data visualization through Flask and Plotly.
+This project looks at [IMDb's Top 250 English-language movies](https://www.imdb.com/chart/top-english-movies) as rated by IMDb Users. You will be able to learn more about the movies in the list and the directors of those movies. This project provides data visualization through Flask and Plotly.
 
 # Data Sources
 1. [Top 250 English Rated Movies from IMDb.com](https://www.imdb.com/chart/top-english-movies)
