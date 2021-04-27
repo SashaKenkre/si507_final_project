@@ -26,7 +26,7 @@ $ pip3 install -r requirements.txt
 
 **Step 2: Run final_project.py**
 ```
-python3 final_project.py
+$ python3 final_project.py
 ```
 
 **Step 3: Go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)**
