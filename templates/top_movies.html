@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="shortcut icon" type="image/png" href="../static/images/clapperboard.png">
+	    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/html5reset.css') }}">
+	    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600">
+	    <title>Top Movie Results</title>
+    </head>
+   <body>
+       <main id="main">
+        <div class="container">
+            <h1>Top {{num}} Movie Results
+              {% if genre == None %}
+              
+              {% else %}
+              Based on '{{genre}}' Genre
+              {% endif %}
+            </h1>
+            <div class="line"></div>
+            <p class="instructions">There 
+              {% if row_count == 1 %}
+              was <strong>{{row_count}} result</strong>
+              {% else %}
+              were <strong>{{row_count}} results</strong>
+              {% endif %}
+              in your search. Click on a row to learn more about a movie.</p>
+        <div class="table_view">
+        <table> 
+         <thead>
+            <td>Rank</td>
+            <td>Title</td>
+            <td>Release Year</td>
+            <td>Genre</td>
+            <td>Director Name</td>
+            <td>Worldwide Gross</td>
+            <td>Budget</td>
+            <td>IMDb Rating</td>
+         </thead>
+         <tbody>
+         {% for row in results %}
+         <tr onclick="window.open(href='{{row[8]}}')">
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+            <td>${{row[5]}}</td>
+            <td>${{row[6]}}</td>
+            <td>{{row[7]}}</td>
+         </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+      <div class="set_button">
+      <form action="/">
+        <input class="button_style" type="submit" value="Go back to home page" />
+    </form>
+    </div>
+      </div>
+      <div class="jump_to_top">
+        <a class="jump_link" href="#main">Jump to Top</a>
+      </div>
+      </main>
+      <footer>
+        <p>Sasha Kenkre &copy; 2021</p>
+        </div>
+      </footer>
+   </body>
+</html>

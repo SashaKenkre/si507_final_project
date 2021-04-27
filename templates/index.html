@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="../static/images/clapperboard.png">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/html5reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600">
+	<title>IMDb Top 250</title>
+</head>
+<body>
+	<div class="skip"><a href="#main">Skip to Main Content</a></div>
+	<header>
+		<div class="header_img">
+			<img id="logo" src="../static/images/IMDb_Logo_Rectangle_Gold.png" alt="IMDb logo">
+			<h1 id="title_text">Data Visualizations for the <br> Top 250 English-language <br> Movies on IMDb</h1>
+		</div></div>
+	</header>
+	<main id="main">
+		<div class="container">
+			<p>Learn more about the top 250 english movies as rated by IMDb users. The data is gathered from this <a href="https://www.imdb.com/chart/top-english-movies" target="_blank">IMDb list</a>.</p> 
+			<p>Feel free to click on a button below to jump to the section you'd like to view.</p><br>
+			<div id="skip_links">
+			<a class="skip_links_style" href="#vis1">Top Movies Based on Genre</a>
+			<a class="skip_links_style" href="#vis2">Movies Across Box Office Variables</a>
+			<a class="skip_links_style" href="#vis3">Top Movies Based on IMDb Rating</a>
+			<a class="skip_links_style" href="#vis4">Top Directors Based on Birth Country</a>
+			</div>
+			<div id="vis1"></div>
+			<div class="vis">
+				<h2>Top Movies Based on Genre</h2>
+				<div class="line"></div>
+			<form action='/top_movies' method='POST'>
+				<section>
+				<p>I would like to view the top <input name="rank" type="text" placeholder="(Enter integer between 1 and 250)"/> movies.<br>
+					I would like to see movies from this genre:
+					<select name="genres">
+						{% for g in genres %}
+							<option value={{g}}>{{g}}</option>
+						{% endfor %}
+					</select>. </p>
+					<p>If you would like to see all results regardless of genre, use 'None'.<br/>
+					</p>
+					<div class=set_button>
+					<button>Get Top Movies</button>
+					</div>
+				</section>
+				</form>
+			</div>
+			<br>
+			<div id="vis2"></div>
+			<div class="vis">
+				<h2>Movies Across Box Office Numbers</h2>
+				<div class="line"></div>
+				<form action='/radar_chart' method='POST'>
+					<section>
+					<p>I would like to view 
+						<select name="titles">
+							{% for t in titles %}
+							<option value="{{t}}" {% if t == "titles" %} selected {% endif %}>{{t}}</option>
+							{% endfor %}
+							</select> across its box office numbers.
+					<p>I would like to compare the above movie with 
+						<select name="titles2">
+							{% for t2 in titles2 %}
+							<option value="{{t2}}" {% if t2 == "titles2" %} selected {% endif %}>{{t2}}</option>
+							{% endfor %}
+							</select> across its box office variables.
+					</p>
+					<p>If you would like to see results for only one movie, use 'None' for the second movie. </p>
+						</p>
+						<div class=set_button>
+						<button>View Radar Chart</button>
+						</div>
+					</section>	
+					</form>
+			</div>
+			<br>
+			<div id="vis3"></div>
+			<div class="vis">
+				<h2>Movies Based on IMDb Rating</h2>
+				<div class="line"></div>
+				<form action='/ratings' method='POST'>
+					<section>
+					<p>I would like to see all movies with a rating of 
+						<select name="ratings">
+							{% for r in ratings %}
+							<option value="{{r}}" {% if r == "ratings" %} selected {% endif %}>{{r}}</option>
+							{% endfor %}
+							</select>.
+						</p>
+						<div class=set_button>
+							<button>Get Movies</button>
+						</div>
+					</section>
+				</form>
+			</div>
+			<br>
+			<div id="vis4"></div>
+			<div class="vis">
+				<h2>Top Directors Based on Birth Country</h2>
+				<div class="line"></div>
+				<form action='/directors' method='POST'>
+					<section>
+						<p>I would like to view the top <input name="d_rank" type="text" placeholder="(Enter integer between 1 and 151)"/> directors according to number of directing credits.</p> 
+						<p>I would like to see directors born in:
+							<select name="countries">
+								{% for c in countries %}
+								<option value="{{c}}" {% if c == "countries" %} selected {% endif %}>{{c}}</option>
+								{% endfor %}
+								</select>.</p>
+							<p>If you would like to see all results regardless of birth country, use 'None'.<br/>
+							</p>
+						<div class=set_button>
+							<button>Get Top Directors</button>
+						</div>
+					</section>
+				</form>
+		</div>
+		<div class="jump_to_top">
+			<a class="jump_link" href="#main">Jump to Top</a>
+		</div>
+	</main>
+
+	<footer>
+		<p>Sasha Kenkre &copy; 2021</p>
+		</div>
+	</footer>
+
+</body>
+</html>
