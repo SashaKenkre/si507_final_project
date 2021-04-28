@@ -2,7 +2,7 @@
 
 This is a final project for SI 507 at UMSI for Winter 2021.
     
-This project looks at (IMDb's Top 250 English-language movies) [https://www.imdb.com/chart/top-english-movies] as rated by IMDb Users. You will be able to learn more about the movies in the list and the directors of those movies. This project provides data visualization through Flask and Plotly.
+This project looks at [IMDb's Top 250 English-language movies](https://www.imdb.com/chart/top-english-movies) as rated by IMDb Users. You will be able to learn more about the movies in the list and the directors of those movies. This project provides data visualization through Flask and Plotly.
 
 # Data Sources
 1. [Top 250 English Rated Movies from IMDb.com](https://www.imdb.com/chart/top-english-movies)
@@ -23,15 +23,18 @@ This project looks at (IMDb's Top 250 English-language movies) [https://www.imdb
 ```
 $ pip3 install -r requirements.txt
 ```
+You can install the provided requirements.txt file. You may need to adjust the code above for installing the packages depending on your OS. 
 
-**Step 2: Run final_project.py**
+**Step 2: Download files and run final_project.py**
 ```
-python3 final_project.py
+$ python3 final_project.py
 ```
+Download the files provided in this repo and make sure all files and folders are stored in the same place. Then, run the final_project.py file to get the below link. 
 
 **Step 3: Go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)**
 
-Go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to access the webpage to interact with the program and its visualization capabilities.
+Go to the link provided ([http://127.0.0.1:5000/](http://127.0.0.1:5000/)) in your terminal after running final_project.py. This will give you access to the webpage to interact with the program and its visualization capabilities.
+
 There are four different options to visualize data from the data source. You can input your choices to get different visualizations for each option. The data visualizations include:
 1. Top X number of movies in the list based on genre
 2. Compare two movies across their box office numbers
